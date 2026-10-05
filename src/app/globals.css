@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  --background: 224 25% 4%;
+  --foreground: 210 40% 98%;
+  --card: 222 25% 7%;
+  --card-foreground: 210 40% 98%;
+  --primary: 160 84% 39%;
+  --primary-foreground: 224 25% 4%;
+  --secondary: 220 20% 12%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 220 20% 12%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 160 84% 39%;
+  --accent-foreground: 224 25% 4%;
+  --border: 220 20% 15%;
+  --input: 220 20% 15%;
+  --ring: 160 84% 39%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 224 25% 4%;
+  --foreground: 210 40% 98%;
+  --card: 222 25% 7%;
+  --card-foreground: 210 40% 98%;
+  --primary: 160 84% 39%;
+  --primary-foreground: 224 25% 4%;
+  --secondary: 220 20% 12%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 220 20% 12%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 160 84% 39%;
+  --accent-foreground: 224 25% 4%;
+  --border: 220 20% 15%;
+  --input: 220 20% 15%;
+  --ring: 160 84% 39%;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom developer scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* Terminal & Code glow effects */
+.code-glow {
+  box-shadow: 0 0 50px -15px rgba(16, 185, 129, 0.15);
+}
+
+.card-gradient-border {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
